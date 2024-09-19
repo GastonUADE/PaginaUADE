@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <!-- Navbar -->
+        <div class="header-content">
+            <div class="logo">
+                <a href="../index.html">Gaston Martinez</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/yo.html">Sobre Mí</a></li>
+                    <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                    <li><a href="../pages/habilidades.html">Habilidades</a></li>
+                    <li><a href="../pages/educacion.html">Educación</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="portfolio-section">
+            <div class="container">
+                <!-- Título de la sección -->
+                <h2 class="portfolio-title">Portafolio</h2>
+        
+                <!-- Descripción breve -->
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque porta justo nec tellus lacinia, ac elementum odio placerat.</p>
+                </div>
+        
+                <!-- Fotos y descripción -->
+                <div class="projects">
+                    <div class="project">
+                        <div class="project-photo">
+                            <img src="../img/hero.png" alt="Proyecto 1">
+                        </div>
+                        <div class="project-description">
+                            <p>Empresa: Nombre y enlace del sitio de la empresa de desarrollo de software (descripción breve). Link al prototipo.</p>
+                            <a href="https://andreiveisuade.github.io/desarrollo_web_tpgrupal_13/" class="project-link" target="_blank">Visitar Proyecto</a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-photo">
+                            <img src="../img/porfolio2.png" alt="Proyecto 2">
+                        </div>
+                        <div class="project-description">
+                            <p>Empresa: Aquí poner el texto en construcción.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Tecnologías -->
+                <div class="technologies">
+                    <h3>Tecnologías</h3>
+                    <div class="technology-logos">
+                        <img src="../img/tecnología1.png" alt="Tecnología 1">
+                        <img src="../img/tecnología2.png" alt="Tecnología 2">
+                        <img src="../img/tecnología3.png" alt="Tecnología 3">
+                        <img src="../img/tecnología4.png" alt="Tecnología 4">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../img/logo.png" alt="Logo" class="footer-logo" id="footer-logo">
+                <h3>Hasta acá!</h3>
+                <p>Espero que hayas aprendido lo suficiente sobre mi y decidas contratarme.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/yo.html">Yo</a></li>
+                    <li><a href="../pages/educacion.html">Educacion</a></li>
+                    <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                    <li><a href="../pages/portfolio.html">Portafolio</a></li>
+                    <li><a href="../pages/habilidades.html"></a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Seguime en mis redes!</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/?locale=es_LA" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/?lang=es" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ar.linkedin.com/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        // Elemento del logo
+    const logo = document.getElementById('footer-logo');
+
+    // Efecto de escalado al pasar el mouse sobre el logo
+    logo.addEventListener('mouseover', () => {
+    logo.classList.add('scale');
+    logo.classList.add('move'); // También aplica el efecto de movimiento
+});
+
+    // Elimina los efectos para cuando el mouse se mueva afuera del logo
+    logo.addEventListener('mouseout', () => {
+    logo.classList.remove('scale');
+    logo.classList.remove('move'); // --> elimina el efecto de movimiento
+});
+
+    // Efecto de rotación al hacer clic en el logo
+    logo.addEventListener('click', () => {
+    logo.classList.add('rotate');
+    
+    // Elimina la clase después de la rotación para permitir rotaciones sucesivas
+    setTimeout(() => {
+        logo.classList.remove('rotate');
+    }, 600); 
+});
+
+
+let lastScrollTop = 0;
+const navbar = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll hacia abajo
+        navbar.style.top = "-60px"; // Ajusta este valor según la altura de tu barra de navegación
+    } else {
+        // Scroll hacia arriba
+        navbar.style.top = "0";
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+});
+
+
+</script>    
+
+
+    
+</body>
+</html>

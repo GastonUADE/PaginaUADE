@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ens">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educacion</title>
+    <link rel="stylesheet" href="../css/educacion.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="../index.html">Gaston Martinez</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/yo.html">Sobre Mí</a></li>
+                    <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                    <li><a href="../pages/habilidades.html">Habilidades</a></li>
+                    <li><a href="../pages/educacion.html">Educación</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="education-section">
+            <div class="title">
+                <h2>Educación</h2>
+            </div>
+        
+
+        <div class="institution-container">
+            <div class="institution-card">
+                <img src="../img/educativo_imagen.jpg" alt="Imagen Institución" class="institution-logo">
+                <h3>Universidad Argentina de La Empresa</h3>
+                <p>Tecnicatura en Programación</p>
+                <p>2024 - Actualidad</p>
+                <button class="more-info">Ver más</button>
+                <div class="extra-info">
+                    <p>Actualmente me encuentro cursando la Tecnicatura en Programación en esta Universidad.</p>
+                </div>
+            </div>
+        
+            <div class="institution-card">
+                <img src="../img/educativo2.jpg" alt="Imagen Institución" class="institution-logo">
+                <h3>Escuela Da Vinci</h3>
+                <p>Curso de Desarrollo Web en Wordpress</p>
+                <p>Mayo 2024 - Agosto 2024</p>
+                <button class="more-info">Ver más</button>
+                <div class="extra-info">
+                    <p>Aprendí mucho sobre Wordpress y Desarrollo Web</p>
+                </div>
+            </div>
+        
+            <div class="institution-card">
+                <img src="../img/educativo3.jpg" alt="Imagen Institución" class="institution-logo">
+                <h3>Taller de Informatica</h3>
+                <p>Curso en Desarrollo Web, PHP y MYSQL</p>
+                <p>2019 - 2022</p>
+                <button class="more-info">Ver más</button>
+                <div class="extra-info">
+                    <p>Aquí aprendí mucho de Backend dando mis primeros pasos en PHP y MYSQL</p>
+                </div>
+            </div>
+        
+            <div class="institution-card">
+                <img src="../img/educativo4.JPG" alt="Imagen Institución" class="institution-logo">
+                <h3>Alianza Cultural</h3>
+                <p>Curso de Advanced English</p>
+                <p>2019 - 2021</p>
+                <button class="more-info">Ver más</button>
+                <div class="extra-info">
+                    <p>Aquí es donde aprendí todo mi nivel acutal de Inglés.</p>
+                </div>
+            </div>
+        </div>
+        
+        
+    </main>
+
+    <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <img src="../img/logo.png" alt="Logo" class="footer-logo" id="footer-logo">
+                    <h3>Hasta acá!</h3>
+                    <p>Espero que hayas aprendido lo suficiente sobre mi y decidas contratarme.</p>
+                </div>
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../pages/yo.html">Yo</a></li>
+                        <li><a href="../pages/educacion.html">Educacion</a></li>
+                        <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                        <li><a href="../pages/contacto.html">Contacto</a></li>
+                        <li><a href="../pages/portfolio.html">Portafolio</a></li>
+                        <li><a href="../pages/habilidades.html"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-section social">
+                    <h3>Seguime en mis redes!</h3>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/?locale=es_LA" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=es" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://ar.linkedin.com/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+        // Elemento del logo
+    const logo = document.getElementById('footer-logo');
+
+    // Efecto de escalado al pasar el mouse sobre el logo
+    logo.addEventListener('mouseover', () => {
+    logo.classList.add('scale');
+    logo.classList.add('move'); // También aplica el efecto de movimiento
+});
+
+    // Elimina los efectos para cuando el mouse se mueva afuera del logo
+    logo.addEventListener('mouseout', () => {
+    logo.classList.remove('scale');
+    logo.classList.remove('move'); // --> elimina el efecto de movimiento
+});
+
+    // Efecto de rotación al hacer clic en el logo
+    logo.addEventListener('click', () => {
+    logo.classList.add('rotate');
+    
+    // Elimina la clase después de la rotación para permitir rotaciones sucesivas
+    setTimeout(() => {
+        logo.classList.remove('rotate');
+    }, 600); 
+});
+
+
+let lastScrollTop = 0;
+const navbar = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll hacia abajo
+        navbar.style.top = "-60px"; // Ajusta este valor según la altura de tu barra de navegación
+    } else {
+        // Scroll hacia arriba
+        navbar.style.top = "0";
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+});
+
+    // Script único de educación 
+    document.querySelectorAll('.more-info').forEach(button => {
+        button.addEventListener('click', function() {
+            const extraInfo = this.nextElementSibling;
+            const isVisible = extraInfo.style.display === 'block';
+    
+            // Toggle display
+            extraInfo.style.display = isVisible ? 'none' : 'block';
+    
+            // Change button text
+            this.textContent = isVisible ? 'Ver más' : 'Ver menos';
+        });
+    });
+    
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo</title>
+    <link rel="stylesheet" href="../css/yo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="../index.html">Gaston Martinez</a>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/yo.html">Sobre Mí</a></li>
+                    <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                    <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                    <li><a href="../pages/habilidades.html">Habilidades</a></li>
+                    <li><a href="../pages/educacion.html">Educación</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <br><br>
+
+    <main>
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="text-content">
+                        <h1>Hola! <span class="highlight">Gaston Martinez te saluda!</span></h1>
+                        <p>Desde chico apredí a amar el mundo de la tecnología. Impulsé mi creatividad cuando arranqué a pintar mis primeros caudros en paint, y desde ahí me di cuenta que tenía mucho que aportar para este basto universo tecnológico. 
+                        La creación de diferentes tipos de software y la ciberseguridad son mi punto a seguir para convertirme en todo un profesional ejemplar de esta rama.
+                        </p>
+                        <a href="path-to-cv.pdf" class="download-btn" download>Descargá mi CV!</a>
+                    </div>
+                    <div class="image-content">
+                        <img src="../img/perfil2.jpg" alt="Gaston Martinez" class="profile-image" height="350" width="300">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <img src="../img/logo.png" alt="Logo" class="footer-logo" id="footer-logo">
+                <h3>Hasta acá!</h3>
+                <p>Espero que hayas aprendido lo suficiente sobre mi y decidas contratarme.</p>
+            </div>
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../pages/yo.html">Yo</a></li>
+                    <li><a href="../pages/educacion.html">Educacion</a></li>
+                    <li><a href="../pages/experiencia.html">Experiencia</a></li>
+                    <li><a href="../pages/contacto.html">Contacto</a></li>
+                    <li><a href="../pages/portfolio.html">Portafolio</a></li>
+                    <li><a href="../pages/habilidades.html"></a></li>
+                </ul>
+            </div>
+            <div class="footer-section social">
+                <h3>Seguime en mis redes!</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/?locale=es_LA" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/?lang=es" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://ar.linkedin.com/" class="social-icon" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+<script>
+        // Elemento del logo
+    const logo = document.getElementById('footer-logo');
+
+    // Efecto de escalado al pasar el mouse sobre el logo
+    logo.addEventListener('mouseover', () => {
+    logo.classList.add('scale');
+    logo.classList.add('move'); // También aplica el efecto de movimiento
+});
+
+    // Elimina los efectos para cuando el mouse se mueva afuera del logo
+    logo.addEventListener('mouseout', () => {
+    logo.classList.remove('scale');
+    logo.classList.remove('move'); // --> elimina el efecto de movimiento
+});
+
+    // Efecto de rotación al hacer clic en el logo
+    logo.addEventListener('click', () => {
+    logo.classList.add('rotate');
+    
+    // Elimina la clase después de la rotación para permitir rotaciones sucesivas
+    setTimeout(() => {
+        logo.classList.remove('rotate');
+    }, 600); 
+});
+
+
+let lastScrollTop = 0;
+const navbar = document.querySelector('.header');
+
+window.addEventListener('scroll', function() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop) {
+        // Scroll hacia abajo
+        navbar.style.top = "-60px"; // Ajusta este valor según la altura de tu barra de navegación
+    } else {
+        // Scroll hacia arriba
+        navbar.style.top = "0";
+    }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+});
+
+// Script Único de Yo
+
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutSection = document.querySelector('.about-section');
+    const profileImage = document.querySelector('.profile-image');
+    const downloadBtn = document.querySelector('.download-btn');
+
+    // Añadir efecto al hacer scroll
+    window.addEventListener('scroll', () => {
+        const sectionPos = aboutSection.getBoundingClientRect().top;
+        const screenPos = window.innerHeight / 1.3;
+
+        if (sectionPos < screenPos) {
+            aboutSection.classList.add('visible');
+        }
+    });
+
+    // Animaciones extra al hacer hover en la imagen y el botón
+    profileImage.addEventListener('mouseover', () => {
+        profileImage.classList.add('scale');
+    });
+
+    profileImage.addEventListener('mouseout', () => {
+        profileImage.classList.remove('scale');
+    });
+});
+
+
+</script>
+
+</body>
+</html>

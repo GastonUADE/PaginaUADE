@@ -1,0 +1,346 @@
+
+/* Estilos Generales */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Estilo Header */
+
+.header {
+    background: #000; 
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: top 0.3s;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
+    
+}
+
+.logo a {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #007bff;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin: 0 10px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    position: relative;
+}
+
+.navbar ul li a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #007bff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Estilo único Yo */
+
+/* Contenedor general */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #12192C; /* Color de fondo oscuro */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* Estilos del texto */
+.text-content {
+    flex: 1;
+    color: #fff;
+}
+
+.text-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.text-content .highlight {
+    color: #00e1ff; /* Color cian para resaltar el nombre */
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #00e1ff;
+    color: #12192C;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 225, 255, 0.4);
+}
+
+/* Estilos de la imagen */
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image {
+    max-width: 80%;
+    border: 5px solid #00e1ff; /* Borde de color cian */
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+/* Para cuando la sección aparece */
+.about-section.visible .text-content, 
+.about-section.visible .image-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Inicialmente oculto */
+.text-content, .image-content {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+
+
+/* Footer */ 
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    background-color: transparent;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.footer-section p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 10px 0;
+}
+
+.footer-section ul li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icon:hover {
+    color: #007bff;
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+/* Estilos del Logo */
+
+.footer-logo {
+    max-width: 150px; 
+    margin-bottom: 20px;
+    transition: transform 0.3s; 
+    
+}
+
+.footer-logo.scale {
+    transform: scale(1.1); 
+}
+
+.footer-logo.rotate {
+    transform: rotate(360deg); 
+}
+
+.footer-logo.move {
+    transform: translateY(-10px); 
+}
+
+/* Responsive desing */
+
+/* Para pantallas pequeñas (dispositivos móviles) */
+@media only screen and (max-width: 768px) {
+    .about-section {
+        height: auto;
+        padding: 1.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .text-content {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .text-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-image {
+        max-width: 100%;
+        margin: 0 auto;
+        border: 3px solid #00e1ff;
+    }
+
+    .download-btn {
+        padding: 0.6rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Para tablets (pantallas medianas) */
+@media only screen and (max-width: 1024px) {
+    .about-section {
+        padding: 2rem 1rem;
+    }
+
+    .container {
+        flex-direction: column;
+        width: 85%;
+    }
+
+    .text-content {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .text-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .text-content p {
+        font-size: 1.1rem;
+    }
+
+    .profile-image {
+        max-width: 90%;
+    }
+}
